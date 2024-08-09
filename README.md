@@ -1,6 +1,6 @@
 # edge-tts
 
-edge-tts — это модуль Python, который позволяет использовать онлайн-сервис преобразования текста в речь Microsoft Edge прямо в вашем коде Python или с помощью команд edge-tts или edge-playback.
+`edge-tts` — это модуль Python, который позволяет использовать онлайн-сервис преобразования текста в речь Microsoft Edge прямо в вашем коде Python или с помощью команд `edge-tts` или `edge-playback`.
 
 ## Установка
 
@@ -8,31 +8,29 @@ edge-tts — это модуль Python, который позволяет ис�
 
     $ pip install edge-tts
 
-Если вы хотите использовать только команды edge-tts и edge-playback, лучше установить через pipx:
+Если вы хотите использовать только команды `edge-tts` и `edge-playback`, лучше установить через `pipx`:
 
     $ pipx install edge-tts
 
-## Usage
+## Использование
 
-### Basic usage
+### Основное использование
 
-If you want to use the `edge-tts` command, you can simply run it with the following command:
+Если вы хотите использовать команду `edge-tts`, вы можете просто запустить её с помощью следующей команды:
 
     $ edge-tts --text "Hello, world!" --write-media hello.mp3 --write-subtitles hello.vtt
 
-If you wish to play it back immediately with subtitles, you could use the `edge-playback` command:
+Если вы хотите сразу воспроизвести с субтитрами, можно использовать команду `edge-playback`:
 
     $ edge-playback --text "Hello, world!"
 
-Note the above requires the installation of the `mpv` command line player.
+Обратите внимание, что для этого требуется установка командного проигрывателя `mpv`.
 
-All `edge-tts` commands work in `edge-playback` as well.
+Все команды `edge-tts` также работают в `edge-playback`.
 
-### Changing the voice
+### Смена голоса
 
-If you want to change the language of the speech or more generally, the voice. 
-
-You must first check the available voices with the `--list-voices` option:
+Если вы хотите изменить язык речи или, в общем, голос, вам нужно сначала проверить доступные голоса с опцией `--list-voices`:
 
     $ edge-tts --list-voices
     Name: Microsoft Server Speech Text to Speech Voice (af-ZA, AdriNeural)
@@ -59,27 +57,27 @@ You must first check the available voices with the `--list-voices` option:
 
     $ edge-tts --voice ar-EG-SalmaNeural --text "مرحبا كيف حالك؟" --write-media hello_in_arabic.mp3 --write-subtitles hello_in_arabic.vtt
 
-### Custom SSML
+### Пользовательский SSML
 
-Support for custom SSML has been removed since 5.0.0 because Microsoft has taken the initiative to prevent it from working. You cannot use custom SSML anymore.
+Поддержка пользовательского SSML была удалена с версии 5.0.0, так как Microsoft предприняла меры по предотвращению его работы. Вы больше не можете использовать пользовательский SSML.
 
-### Changing rate, volume and pitch
+### Изменение скорости, громкости и высоты тона
 
-It is possible to make minor changes to the generated speech.
+Возможно внести небольшие изменения в сгенерированную речь..
 
     $ edge-tts --rate=-50% --text "Hello, world!" --write-media hello_with_rate_halved.mp3 --write-subtitles hello_with_rate_halved.vtt
     $ edge-tts --volume=-50% --text "Hello, world!" --write-media hello_with_volume_halved.mp3 --write-subtitles hello_with_volume_halved.vtt
     $ edge-tts --pitch=-50Hz --text "Hello, world!" --write-media hello_with_pitch_halved.mp3 --write-subtitles hello_with_pitch_halved.vtt
 
-In addition, it is required to use `--rate=-50%` instead of `--rate -50%` (note the lack of an equal sign) otherwise the `-50%` would be interpreted as just another argument.
+Кроме того, необходимо использовать `--rate=-50%` вместо `--rate -50%` (обратите внимание на наличие знака равенства), иначе `-50%` будет интерпретировано как очередной аргумент.
 
-### Note on the `edge-playback` command
+### Примечание о команде edge-playback
 
-`edge-playback` is just a wrapper around `edge-tts` that plays back the generated speech. It takes the same arguments as the `edge-tts` option.
+`edge-playback` — это всего лишь обёртка над `edge-tts`, которая воспроизводит сгенерированную речь. Она принимает те же аргументы, что и опция `edge-tts`.
 
-## Python module
+## Модуль Python
 
-It is possible to use the `edge-tts` module directly from Python. For a list of example applications:
+Вы можете использовать модуль `edge-tts` напрямую из Python. Список примеров для применения:
 
 * https://github.com/rany2/edge-tts/tree/master/examples
 * https://github.com/rany2/edge-tts/blob/master/src/edge_tts/util.py
