@@ -1,14 +1,14 @@
 # edge-tts
 
-`edge-tts` is a Python module that allows you to use Microsoft Edge's online text-to-speech service from within your Python code or using the provided `edge-tts` or `edge-playback` command.
+edge-tts — это модуль Python, который позволяет использовать онлайн-сервис преобразования текста в речь Microsoft Edge прямо в вашем коде Python или с помощью команд edge-tts или edge-playback.
 
-## Installation
+## Установка
 
-To install it, run the following command:
+Для установки выполните следующую команду:
 
     $ pip install edge-tts
 
-If you only want to use the `edge-tts` and `edge-playback` commands, it would be better to use pipx:
+Если вы хотите использовать только команды edge-tts и edge-playback, лучше установить через pipx:
 
     $ pipx install edge-tts
 
